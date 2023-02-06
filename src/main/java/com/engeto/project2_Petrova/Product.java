@@ -12,6 +12,28 @@ public class Product {
     //private int id;
 
 
+    public Product(){
+
+    }
+
+    public Product(String partNumber, String name, String description, boolean isForSale, BigDecimal price){
+        this.partNumber = partNumber;
+        this.name = name;
+        this.description = description;
+        this.isForSale = isForSale;
+        this.price = price;
+        //            id =0;
+     //   this.id = id;
+    }
+    public Product(String partNumber, String name, String description, boolean isForSale, BigDecimal price, int id){
+        this.partNumber = partNumber;
+        this.name = name;
+        this.description = description;
+        this.isForSale = isForSale;
+        this.price = price;
+        //            id =0;
+        this.id = id;
+    }
     public int getId() {
         return id;
     }
@@ -20,14 +42,15 @@ public class Product {
         this.id = id;
     }
 
-    public Product(String partNumber, String name, String description, boolean isForSale, BigDecimal price){
-        this.partNumber = partNumber;
-        this.description = description;
-        this.isForSale = isForSale;
-        this.price = price;
-                id =0;
-    //    this.id = id;
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
 
     public String getPartnumber(){
         return partNumber;
