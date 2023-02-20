@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class Product {
     private String partNumber;
     private String name;
-    private Long id;
+    private Integer id;
     private String description;
     private boolean isForSale;
     private BigDecimal price;
@@ -25,7 +25,7 @@ public class Product {
         //            id =0;
      //   this.id = id;
     }
-/*    public Product(String partNumber, String name, String description, boolean isForSale, BigDecimal price, int id){
+    public Product(String partNumber, String name, String description, boolean isForSale, BigDecimal price, Integer id){
         this.partNumber = partNumber;
         this.name = name;
         this.description = description;
@@ -35,11 +35,11 @@ public class Product {
         this.id = id;
     }
 
-  */  public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -85,16 +85,7 @@ public class Product {
         this.price = price;
     }
 
-   // public int getId(){
-    //    return id;
-    //}
-
-    //overit, ked ano, tak updatePrice taky dobre
-   // public void setId(int id){
-   //     this.id = id;
-   // }
-
-    public void updatePrice(BigDecimal price){
+   public void updatePrice(BigDecimal price){
         this.price = price;
     }
 

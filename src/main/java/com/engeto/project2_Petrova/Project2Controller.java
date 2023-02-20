@@ -25,45 +25,39 @@ public class Project2Controller{
         return product;
     }
 */
-    @GetMapping("/addProduct")
+   /* @GetMapping("/addProduct")
     public Product addProduct(){
         Product product = new Product("123","srobka R20","obycajna srobka",true,BigDecimal.valueOf(15),2);
-        product.setId(2L);
-        products.put(2L,product);
+        product.setId(2);
+        products.put(2,product);
         return product;
     }
-    Map<Long,Product> products = new HashMap<>();
+    */
+    //Map<Integer, Product> products = new HashMap<Integer, Product>();
+
     //int seq = 0;
 
     @GetMapping("/getAllItems")
     public Collection<Product> getAllItems() throws SQLException {
         return productService.getAllProducts();
     }
-    @GetMapping("/getProduct/{id}")
+    /*@GetMapping("/getProduct/{id}")
     public Product getItemById(@PathVariable ("id") int id){
        // Product product = new Product("4","matica R20","obycajna matka",true,BigDecimal.valueOf(40),3);
         return products.get(id);
     }
-
+*/
     @PostMapping("/postProduct")
     public Product postProduct(@RequestBody Product product) throws SQLException {
-        /*
-        seq++;
-        int id = seq;
 
-        product.setId(id);
-        products.put(id,product);
-        return product;
-
-        */
-       // System.out.println("We are inserting new item..");
-        Long generatedId = productService.insertNewProduct(product);
+        //System.out.println("We are inserting new item..");
+        Integer generatedId = productService.insertNewProduct(product);
         product.setId(generatedId);
         return product;
     }
-
+/*
     @PutMapping("/putProduct/{id}")
-    public Product putProduct(@PathVariable Long id,@RequestBody Product product){
+    public Product putProduct(@PathVariable Integer id, @RequestBody Product product){
         product.setId(id);
         products.put(id,product);
         return product;
@@ -72,4 +66,6 @@ public class Project2Controller{
     public void deleteProduct(@PathVariable Long id){
         products.remove(id);
     }
+    */
+
 }

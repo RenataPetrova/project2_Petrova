@@ -34,14 +34,15 @@ public class ProductService {
     }
 
     public Integer insertNewProduct(Product newProduct) throws SQLException {
+        //System.out.println("We are inserting new item..");
         Statement statement = connection.createStatement();
-        statement.executeUpdate("INSERT INTO product(partNumber, name, description, isForSale, price) VALUES('"
+        statement.executeUpdate(
+                "INSERT INTO product(partNumber, name, description, isForSale, price) VALUES('"
                         + newProduct.getPartnumber() + "', '"
                         + newProduct.getName() + "', '"
-                        + newProduct.getDescription() + "', '"
-                        + newProduct.getIsForSale() + "', '"
-                        + newProduct.getPrice() + "')",1);
-
+                        + newProduct.getDescription() + "', "
+                        + newProduct.getIsForSale() + ", "
+                        + newProduct.getPrice() + ")",1);
 
 
         return statement.getGeneratedKeys().getInt(1);
