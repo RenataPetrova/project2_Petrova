@@ -50,7 +50,7 @@ public class Project2Controller{
     @PostMapping("/postProduct")
     public Product postProduct(@RequestBody Product product) throws SQLException {
 
-        //System.out.println("We are inserting new item..");
+       // System.out.println("We are inserting new item..");
         Integer generatedId = productService.insertNewProduct(product);
         product.setId(generatedId);
         return product;
@@ -62,10 +62,14 @@ public class Project2Controller{
         products.put(id,product);
         return product;
     }
-    @DeleteMapping("/deleteProduct/{id}")
-    public void deleteProduct(@PathVariable Long id){
-        products.remove(id);
-    }
     */
+    @DeleteMapping("/deleteProduct/{id}")
+     public void deleteProduct(@PathVariable Integer id) throws SQLException {
+        //products.remove(id);
+        productService.deleteOldProduct(id);
+        //product.setId(generatedId);
+        //return product;
+    }
+
 
 }

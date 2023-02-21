@@ -37,14 +37,21 @@ public class ProductService {
         //System.out.println("We are inserting new item..");
         Statement statement = connection.createStatement();
         statement.executeUpdate(
-                "INSERT INTO product(partNumber, name, description, isForSale, price) VALUES('"
-                        + newProduct.getPartnumber() + "', '"
+                "INSERT INTO product(name, description, isForSale, price,partnumber) VALUES('"
+                        //+ newProduct.getPartnumber() + "', '"
                         + newProduct.getName() + "', '"
                         + newProduct.getDescription() + "', "
                         + newProduct.getIsForSale() + ", "
-                        + newProduct.getPrice() + ")",1);
+                        + newProduct.getPrice() + ",'"
+                        + newProduct.getPartnumber() + "')",1);
 
 
         return statement.getGeneratedKeys().getInt(1);
+    }
+
+    public void deleteOldProduct(Integer myId) throws SQLException {
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(
+                "DELETE FROM product WHERE id = " + myId  );
     }
 }
