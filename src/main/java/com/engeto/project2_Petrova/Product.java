@@ -3,7 +3,7 @@ package com.engeto.project2_Petrova;
 import java.math.BigDecimal;
 
 public class Product {
-    private String partNumber;
+    private String partnumber;
     private String name;
     private Integer id;
     private String description;
@@ -16,8 +16,8 @@ public class Product {
 
     }
 
-    public Product(String partNumber, String name, String description, boolean isForSale, BigDecimal price){
-        this.partNumber = partNumber;
+    public Product(String partnumber, String name, String description, boolean isForSale, BigDecimal price){
+        this.partnumber = partnumber;
         this.name = name;
         this.description = description;
         this.isForSale = isForSale;
@@ -25,8 +25,8 @@ public class Product {
         //            id =0;
      //   this.id = id;
     }
-    public Product(String partNumber, String name, String description, boolean isForSale, BigDecimal price, Integer id){
-        this.partNumber = partNumber;
+    public Product(String partnumber, String name, String description, boolean isForSale, BigDecimal price, Integer id){
+        this.partnumber = partnumber;
         this.name = name;
         this.description = description;
         this.isForSale = isForSale;
@@ -47,18 +47,18 @@ public class Product {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName() {
         this.name = name;
     }
 
 
 
     public String getPartnumber(){
-        return partNumber;
+        return partnumber;
     }
 
     public void setPartnumber(){
-        this.partNumber = partNumber;
+        this.partnumber = partnumber;
     }
 
     public String getDescription(){

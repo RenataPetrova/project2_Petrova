@@ -54,4 +54,16 @@ public class ProductService {
         statement.executeUpdate(
                 "DELETE FROM product WHERE id = " + myId  );
     }
+
+    public void updateProduct(Product product,Integer myId) throws SQLException {
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(
+                "UPDATE product SET "
+                        + "name = " + product.getName()
+                        + "description = " + product.getDescription()
+                        + "isForSale = " + product.getIsForSale()
+                        + "price = " + product.getPrice()
+                        + "partnumber " + product.getPartnumber()
+                        + " WHERE id = " + myId);
+    }
 }

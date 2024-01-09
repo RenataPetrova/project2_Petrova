@@ -55,14 +55,15 @@ public class Project2Controller{
         product.setId(generatedId);
         return product;
     }
-/*
+
     @PutMapping("/putProduct/{id}")
-    public Product putProduct(@PathVariable Integer id, @RequestBody Product product){
-        product.setId(id);
-        products.put(id,product);
+    public Product putProduct(@PathVariable Integer id, @RequestBody Product product) throws SQLException {
+        //product.setId(id);
+        //products.put(id, product);
+        productService.updateProduct(product,id);
         return product;
     }
-    */
+
     @DeleteMapping("/deleteProduct/{id}")
      public void deleteProduct(@PathVariable Integer id) throws SQLException {
         //products.remove(id);
